@@ -16,10 +16,10 @@ export function SenderToggle({ sender, onToggle }: SenderToggleProps) {
       onClick={onToggle}
       title={isRobot ? 'Remetente: Robô (clique para alternar)' : 'Remetente: Usuário (clique para alternar)'}
       aria-label={`Alternar remetente. Atual: ${isRobot ? 'Robô' : 'Usuário'}`}
-      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-all duration-200 select-none shadow-xs active:scale-95 ${
+      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-all duration-200 select-none shadow-xs active:scale-95 ${
         isRobot
-          ? 'bg-purple-100/90 text-purple-700 hover:bg-purple-200/90 border border-purple-300/80 ring-1 ring-purple-400/30'
-          : 'bg-stone-100 text-stone-700 hover:bg-stone-200/80 border border-stone-300/70'
+          ? 'bg-purple-100/90 text-purple-700 hover:bg-purple-200/90 border-purple-300/80'
+          : 'bg-stone-100 text-stone-700 hover:bg-stone-200/80 border-stone-300/70'
       }`}
     >
       {isRobot ? <RobotIcon /> : <UserIcon />}

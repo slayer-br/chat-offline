@@ -49,10 +49,10 @@ export function ChatInput({ sender, onToggleSender, onSend }: ChatInputProps) {
   return (
     <div className="p-4 pt-0">
       <div
-        className={`flex items-end gap-2 rounded-2xl bg-white p-3 shadow-md transition-colors duration-200 ${
+        className={`flex items-end gap-2 rounded-2xl bg-white p-3 shadow-md border-2 transition-colors duration-200 ${
           isRobot
-            ? 'border-2 border-purple-500'
-            : 'border border-stone-200'
+            ? 'border-purple-500'
+            : 'border-stone-200'
         }`}
       >
         <SenderToggle sender={sender} onToggle={onToggleSender} />
