@@ -37,7 +37,7 @@ export function ChatInput({ sender, onToggleSender, onSend }: ChatInputProps) {
   }
 
   const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key.toLowerCase() === 'enter' && !e.shiftKey) {
       e.preventDefault()
       handleSubmit()
     }
