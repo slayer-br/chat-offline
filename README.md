@@ -27,6 +27,18 @@ O histórico vive 100% em memória no estado da aplicação (React State), ideal
 
 ---
 
+## 📸 Telas da Aplicação
+
+| Estado Inicial (Vazio) | Modo Usuário (Digitando) | Modo Robô (Borda Roxa) |
+|:---:|:---:|:---:|
+| ![Estado Inicial](./public/Screenshot01.png) | ![Modo Usuário](./public/Screenshot02.png) | ![Modo Robô](./public/Screenshot03.png) |
+
+| Conversa em Andamento | Visão Geral do Chat |
+|:---:|:---:|
+| ![Conversa em Andamento](./public/Screenshot04.png) | ![Visão Geral](./public/Screenshot05.png) |
+
+---
+
 ## 🛠️ Tecnologias Utilizadas
 
 - **[React 19](https://react.dev/)** — Biblioteca para interfaces de usuário.
