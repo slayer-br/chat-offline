@@ -17,7 +17,7 @@ export function MessageList({ messages }: MessageListProps) {
     return (
       <div className="flex flex-1 items-center justify-center p-4 text-center">
         <p className="text-stone-500 text-sm sm:text-base">
-          Nenhuma mensagem ainda. Envie a primeira!
+          O chat está quieto... Que tal começar a conversa?
         </p>
       </div>
     )

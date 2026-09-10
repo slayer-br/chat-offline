@@ -70,7 +70,7 @@ type Message = {
 
 ### RF-02 — Estado vazio
 
-- Quando não houver mensagens, exibir texto indicativo (ex.: *"Nenhuma mensagem ainda. Envie a primeira!"*).
+- Quando não houver mensagens, exibir texto indicativo (*"O chat está quieto... Que tal começar a conversa?"*).
 - O estado vazio ocupa a área de histórico acima do input.
 
 ### RF-03 — Input de mensagem
