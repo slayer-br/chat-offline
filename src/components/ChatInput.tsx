@@ -1,10 +1,14 @@
 import { useState, useRef, type ChangeEvent, type KeyboardEvent } from 'react'
+import type { Sender } from '../types/message'
+import { SenderToggle } from './SenderToggle'
 
 type ChatInputProps = {
+  sender: Sender
+  onToggleSender: () => void
   onSend: (text: string) => void
 }
 
-export function ChatInput({ onSend }: ChatInputProps) {
+export function ChatInput({ sender, onToggleSender, onSend }: ChatInputProps) {
   const [text, setText] = useState('')
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
@@ -40,19 +44,25 @@ export function ChatInput({ onSend }: ChatInputProps) {
   }
 
   const isDisabled = text.trim() === ''
+  const isRobot = sender === 'robot'
 
   return (
     <div className="p-4 pt-0">
-      <div className="flex items-end gap-2 rounded-2xl bg-white p-3 shadow-md border border-stone-200 transition-colors">
-        {/* Espaço reservado para o toggle do remetente (Fase 4) */}
-        <div id="sender-toggle-slot" />
+      <div
+        className={`flex items-end gap-2 rounded-2xl bg-white p-3 shadow-md transition-colors duration-200 ${
+          isRobot
+            ? 'border-2 border-purple-500'
+            : 'border border-stone-200'
+        }`}
+      >
+        <SenderToggle sender={sender} onToggle={onToggleSender} />
 
         <textarea
           ref={textareaRef}
           value={text}
           onChange={handleInput}
           onKeyDown={handleKeyDown}
-          placeholder="Digite uma mensagem..."
+          placeholder={isRobot ? 'Digite uma mensagem como Robô...' : 'Digite uma mensagem...'}
           rows={1}
           className="max-h-36 min-h-[24px] flex-1 resize-none bg-transparent px-2 py-1 text-sm sm:text-base text-stone-900 outline-none placeholder:text-stone-400 leading-normal"
         />
@@ -62,7 +72,11 @@ export function ChatInput({ onSend }: ChatInputProps) {
           onClick={handleSubmit}
           disabled={isDisabled}
           aria-label="Enviar mensagem"
-          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-stone-900 text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:not-disabled:bg-stone-800 active:not-disabled:scale-95"
+          className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed active:not-disabled:scale-95 ${
+            isRobot
+              ? 'bg-purple-600 hover:not-disabled:bg-purple-700'
+              : 'bg-stone-900 hover:not-disabled:bg-stone-800'
+          }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,3 +91,4 @@ export function ChatInput({ onSend }: ChatInputProps) {
     </div>
   )
 }
+
