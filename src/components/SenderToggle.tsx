@@ -12,42 +12,68 @@ export function SenderToggle({ sender, onToggle }: SenderToggleProps) {
     <button
       type="button"
       onClick={onToggle}
+      title={isRobot ? 'Remetente: Robô (clique para alternar)' : 'Remetente: Usuário (clique para alternar)'}
       aria-label={`Alternar remetente. Atual: ${isRobot ? 'Robô' : 'Usuário'}`}
-      className={`flex h-9 items-center gap-1.5 rounded-xl px-2.5 text-xs sm:text-sm font-medium transition-all select-none ${
+      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition-all duration-200 select-none shadow-xs active:scale-95 ${
         isRobot
-          ? 'bg-purple-100 text-purple-700 hover:bg-purple-200'
-          : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
+          ? 'bg-purple-100/90 text-purple-700 hover:bg-purple-200/90 border border-purple-300/80 ring-1 ring-purple-400/30'
+          : 'bg-stone-100 text-stone-700 hover:bg-stone-200/80 border border-stone-300/70'
       }`}
     >
       {isRobot ? (
-        <>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="h-4 w-4"
-          >
-            <path d="M12 2a1 1 0 0 1 1 1v1.07A8.002 8.002 0 0 1 20 12v3a4 4 0 0 1-4 4h-1v1a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-1H8a4 4 0 0 1-4-4v-3a8.002 8.002 0 0 1 7-7.93V3a1 1 0 0 1 1-1ZM8.5 10a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm7 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
-          </svg>
-          <span>Robô</span>
-        </>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          className="h-6 w-6 shrink-0"
+        >
+          <path d="M12 5.5V2.5" stroke="#a855f7" strokeWidth="2" strokeLinecap="round" />
+          <circle cx="12" cy="2" r="1.5" fill="#ec4899" />
+          <rect
+            x="3.5"
+            y="5.5"
+            width="17"
+            height="14"
+            rx="4.5"
+            className="fill-purple-600/15 stroke-purple-600"
+            strokeWidth="1.8"
+          />
+          <circle cx="8.5" cy="11.5" r="1.8" className="fill-purple-700" />
+          <circle cx="15.5" cy="11.5" r="1.8" className="fill-purple-700" />
+          <path
+            d="M9.5 15.2C10.5 16.5 13.5 16.5 14.5 15.2"
+            stroke="#7c3aed"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+        </svg>
       ) : (
-        <>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="h-4 w-4"
-          >
-            <path
-              fillRule="evenodd"
-              d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
-              clipRule="evenodd"
-            />
-          </svg>
-          <span>Usuário</span>
-        </>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          className="h-6 w-6 shrink-0"
+        >
+          <rect
+            x="3.5"
+            y="3.5"
+            width="17"
+            height="17"
+            rx="8.5"
+            className="fill-stone-600/10 stroke-stone-700"
+            strokeWidth="1.8"
+          />
+          <circle cx="12" cy="9.5" r="3" className="fill-stone-700" />
+          <path
+            d="M7 17.2C7.2 14.3 9.4 13.8 12 13.8C14.6 13.8 16.8 14.3 17 17.2"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+        </svg>
       )}
     </button>
   )
 }
+
+
