@@ -2,6 +2,8 @@
 
 > 📚 **Projeto Educacional:** Este projeto foi desenvolvido exclusivamente para **fins de estudos e aprendizado**, servindo como prática de componentização, gerenciamento de estado em memória com React 19, TypeScript e estilização moderna com Tailwind CSS v4.
 
+🔗 **Demonstração Online:** [https://slayer-br.github.io/chat-offline/](https://slayer-br.github.io/chat-offline/)
+
 Aplicação de chat em janela única onde você pode simular conversas enviando mensagens alternando entre **Usuário** e **Robô** através de um toggle interativo e intuitivo no campo de digitação.
 
 O histórico vive 100% em memória no estado da aplicação (React State), ideal para prototipação, testes rápidos e demonstrações sem necessidade de conexão externa ou banco de dados.
